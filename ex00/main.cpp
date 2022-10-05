@@ -10,5 +10,17 @@ int	main( void )
 {
 	Zombie	zozo;
 
+	zozo.announce();
+	Zombie	rere("rererere");
+
+	rere.announce();
+
+	Zombie* toto = newZombie("loto");
+	toto->announce();
+
+	randomChump("zomb_local");
+
+	delete toto;
+
 	return (1);
 }

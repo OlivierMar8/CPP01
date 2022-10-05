@@ -1,7 +1,6 @@
 //Zombie.cpp	CPP01 / ex00
 
 #include <iostream>
-#include <iomanip>
 #include "Zombie.hpp"
 
 Zombie::Zombie( void ) {
@@ -9,8 +8,14 @@ Zombie::Zombie( void ) {
 	return;
 }
 
+Zombie::Zombie( std::string name ) : _name(name) {
+
+	return;
+}
+
 Zombie::~Zombie( void ) {
 
+	std::cout << _name << ": destructor called" << std::endl;
 	return;
 }
 
@@ -25,7 +30,7 @@ void	Zombie::setName( std::string name ) {
 	return;
 }
 
-void	Zombie::announce( void ) {
+void	Zombie::announce( void ) const {
 
 	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
