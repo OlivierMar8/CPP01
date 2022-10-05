@@ -8,7 +8,7 @@ Weapon::Weapon( void ) {
 	return;
 }
 
-Weapon::Weapon( std::string name) : _name(name) {
+Weapon::Weapon( std::string type) : _type(type) {
 
 	return;
 }
@@ -18,14 +18,14 @@ Weapon::~Weapon( void ) {
 	return;
 }
 
-std::string	Weapon::getName( void) const {
+std::string	Weapon::getType( void) const {
 
-	return (this->_name);
+	return (this->_type);
 }
 
-void	Weapon::setName( std::string name) {
+void	Weapon::setType( std::string type) {
 
-	this->_name = name;
+	this->_type = type;
 }
 
 

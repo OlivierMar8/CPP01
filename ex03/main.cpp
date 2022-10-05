@@ -7,6 +7,6 @@ int	main( void )
 {
 	Weapon inst("first");
 
-	std::cout << inst.getName() << std::endl;
+	std::cout << inst.getType() << std::endl;
 	return (0);
 }
