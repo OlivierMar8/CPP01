@@ -14,8 +14,8 @@ class	HumanB {
 		
 		std::string	getName( void ) const;
 		void		setName( std::string name );
-		Weapon*		getWeaponPTR( void ) const;
-		void		setWeaponPTR( Weapon* weaponPTR );
+		Weapon*		getWeapon( void ) const;
+		void		setWeapon( Weapon& weaponPTR );
 		void		attack( void ) const;
 
 	private:

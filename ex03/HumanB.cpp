@@ -24,20 +24,20 @@ void	HumanB::setName( std::string name) {
 	return;
 }
 
-Weapon*	HumanB::getWeaponPTR (void ) const {
+Weapon*	HumanB::getWeapon(void ) const {
 
 	return (this->_weaponPTR);
 }
 
-void	HumanB::setWeaponPTR( Weapon* weaponPTR) {
+void	HumanB::setWeapon( Weapon& weaponPTR) {
 
-	this->_weaponPTR = weaponPTR;
+	this->_weaponPTR = &weaponPTR;
 	return;
 }
 
 void	HumanB::attack( void) const {
 
-	std::cout << this->_name << " attacks with their " << _weaponPTR << std::endl;
+	std::cout << this->_name << " attacks with their " << _weaponPTR->getType() << std::endl;
 	return;
 }
 

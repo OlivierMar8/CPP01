@@ -8,7 +8,7 @@ CC			= c++-12 #c++-12
 
 RM			= rm -f
 
-CFLAGS		= -Wall -Werror -Wextra -std=c++98 
+CFLAGS		= -Wall -Werror -Wextra -std=c++98  -g
 
 
 all:		${NAME}

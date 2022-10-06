@@ -24,12 +24,12 @@ void	HumanA::setName( std::string name ) {
 	return;
 }
 
-Weapon&	HumanA::getWeaponREF( void ) const {
+Weapon&	HumanA::getWeapon( void ) const {
 
 	return (this->_weaponREF);
 }
 
-void	HumanA::setWeaponREF ( Weapon& weaponREF) {
+void	HumanA::setWeapon( Weapon& weaponREF) {
 
 	this->_weaponREF = weaponREF;
 	return;
@@ -37,8 +37,7 @@ void	HumanA::setWeaponREF ( Weapon& weaponREF) {
 
 void	HumanA::attack( void ) const {
 
-	std::cout << this->_name << " attacks with their " << std::endl;
-	//std::cout << this->_name << " attacks with their " << HumanA::getWeaponREF() << std::endl;
+	std::cout << this->_name << " attacks with their " << _weaponREF.getType() << std::endl;
 	return;
 }
 
