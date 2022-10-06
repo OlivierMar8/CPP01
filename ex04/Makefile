@@ -1,10 +1,10 @@
-SRCS		= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS		= main.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
-NAME		= violence 
+NAME		= sed_04 
 
-CC			= c++-12 #c++-12
+CC			= c++ #c++-12
 
 RM			= rm -f
 
