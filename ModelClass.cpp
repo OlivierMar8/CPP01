@@ -14,6 +14,3 @@ ModelClass::~ModelClass( void ) {
 
 	return;
 }
-
-}
-

@@ -3,32 +3,63 @@
 #include <iostream>
 #include <fstream>
 
-std::string	replace(std::string str)
+std::string	replace(std::string str, std::string s_str, std::string replace_str)
 {
-	return (str);
+	std::string	newline;
+	size_t		pos;
+	size_t		start;
+
+	
+	start = 0;
+	newline = "";
+	pos = str.find(s_str);
+	while (pos != std::string::npos)
+	{
+		newline += str.substr(start, pos - start);
+		newline.append(replace_str);
+		start = pos + s_str.size();
+		pos = str.find(s_str, start);
+	}
+	newline.append(str.substr(start));
+	return (newline);
 }
 
 
 
-int	main(int argc, char **argv)
+int	main(int argc, char** argv)
 {
-	std::string filename;
-	std::string res;
 	if (argc != 4)
 	{
 		std::cout << "Error with arguments !" << std::endl;
 		return (1);
 	}
-	std::ifstream	inFile(argv[1]);
-	filename = argv[1];
-	filename.append(".replace");
-	std::ofstream	outFile("replaceFile");
-
-
-	inFile >> res;
-		std::cout << res << std::endl;
-
-	inFile.close();
-	outFile.close();
+	std::string filename = argv[1];
+	std::ofstream	outFile;
+	std::string str1 = argv[2];
+	std::string	str2 = argv[3];
+	std::string res;
+	//size_t		pos;
+	std::ifstream	inFile;
+	inFile.open(filename);
+	if (inFile.is_open())
+	{
+		getline(inFile, res);
+		if (!inFile.eof())
+		{
+			filename.append(".replace");
+			std::ofstream	outFile;
+			outFile.open(filename);
+			while (!inFile.eof())
+			{
+				res = replace(res, str1, str2);
+				outFile <<  res <<  std::endl;
+				getline(inFile, res);
+			}
+			outFile.close();
+		}
+		inFile.close();
+	}
+	else
+		std::cout << "Error opening file " << filename << std::endl;
 	return 0;
 }
