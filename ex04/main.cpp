@@ -35,10 +35,7 @@ int	main(int argc, char** argv)
 	}
 	std::string filename = argv[1];
 	std::ofstream	outFile;
-	std::string str1 = argv[2];
-	std::string	str2 = argv[3];
 	std::string res;
-	//size_t		pos;
 	std::ifstream	inFile;
 	inFile.open(filename);
 	if (inFile.is_open())
@@ -49,13 +46,18 @@ int	main(int argc, char** argv)
 			filename.append(".replace");
 			std::ofstream	outFile;
 			outFile.open(filename);
-			while (!inFile.eof())
+			if (outFile.is_open())
 			{
-				res = replace(res, str1, str2);
-				outFile <<  res <<  std::endl;
-				getline(inFile, res);
+				while (!inFile.eof())
+				{
+					res = replace(res, argv[2], argv[3]);			
+					outFile <<  res <<  std::endl;
+					getline(inFile, res);
+				}
+				outFile.close();
 			}
-			outFile.close();
+			else
+			std::cout << "Error opening file " << filename << std::endl;
 		}
 		inFile.close();
 	}
