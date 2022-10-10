@@ -1,3 +1,5 @@
+#Makefile   CPP01   ex01
+
 SRCS		= Zombie.cpp main.cpp zombieHorde.cpp
 
 OBJS		= $(SRCS:.cpp=.o)

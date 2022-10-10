@@ -1,4 +1,4 @@
-#Makefile	CPP01	ex05
+#Makefile   CPP01   ex05
 
 SRCS		= main.cpp Harl.cpp
 

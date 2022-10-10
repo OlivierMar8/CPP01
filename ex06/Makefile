@@ -1,10 +1,10 @@
-#Makefile   CPP01   ex04
+#Makefile	CPP01	ex06
 
-SRCS		= main.cpp
+SRCS		= main.cpp Harl.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
-NAME		= sed_04 
+NAME		= harl_filter 
 
 CC			= c++ #c++-12
 

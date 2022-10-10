@@ -1,3 +1,5 @@
+#Makefile   CPP01   ex03
+
 SRCS		= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 OBJS		= $(SRCS:.cpp=.o)

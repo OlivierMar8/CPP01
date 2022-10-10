@@ -1,3 +1,5 @@
+#Makefile   CPP01   ex00
+
 SRCS		= Zombie.cpp main.cpp newZombie.cpp randomChump.cpp	
 
 OBJS		= $(SRCS:.cpp=.o)
